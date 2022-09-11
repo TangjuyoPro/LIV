@@ -1,0 +1,800 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:onClick="UpdateView"
+    tools:ignore="ExtraText,MissingDefaultResource,DuplicateClickableBoundsCheck,DuplicateClickableBoundsCheck">
+
+    <!--
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/my_awesome_toolbar"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:minHeight="?attr/actionBarSize"
+        android:background="?attr/colorPrimary" />
+    -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+
+        android:id="@+id/ConstraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="UpdateView"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="104dp"
+        tools:layout_editor_absoluteY="64dp">
+
+
+        <ImageView
+            android:id="@+id/imgENLFournisseur"
+            android:layout_width="30dp"
+            android:layout_height="28dp"
+            android:layout_marginTop="-15dp"
+            android:visibility="invisible"
+            app:layout_constraintStart_toEndOf="@+id/lieuEnlevement"
+            app:layout_constraintTop_toTopOf="@+id/lieuEnlevement"
+            app:srcCompat="@drawable/asterisque" />
+
+        <ImageView
+            android:id="@+id/imgFournisseur"
+            android:layout_width="30dp"
+            android:layout_height="28dp"
+            android:layout_marginTop="-15dp"
+            android:visibility="invisible"
+            app:layout_constraintStart_toEndOf="@+id/fournisseur"
+            app:layout_constraintTop_toTopOf="@+id/fournisseur"
+            app:srcCompat="@drawable/asterisque" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="30dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="-10dp"
+            android:layout_marginTop="-23dp"
+            app:layout_constraintStart_toEndOf="@+id/Adresse"
+            app:layout_constraintTop_toTopOf="@+id/Adresse"
+            app:srcCompat="@drawable/asterisque" />
+
+        <ImageView
+            android:id="@+id/imgStock"
+            android:layout_width="30dp"
+            android:layout_height="28dp"
+            android:layout_marginTop="-15dp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/commStock"
+            app:layout_constraintTop_toTopOf="@+id/commStock"
+            app:srcCompat="@drawable/asterisque" />
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="33dp"
+            android:layout_height="32dp"
+            app:layout_constraintStart_toEndOf="@+id/imageView7"
+            app:layout_constraintTop_toTopOf="@+id/imageView7"
+            app:srcCompat="@drawable/asterisque" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="-20dp"
+            android:onClick="findJourLivraison"
+            app:layout_constraintBottom_toTopOf="@+id/dateSouhaitee"
+            app:layout_constraintStart_toEndOf="@+id/dateSouhaitee"
+            app:layout_constraintTop_toBottomOf="@+id/creneauDispo"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@android:drawable/ic_menu_my_calendar"
+            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="33dp"
+            android:layout_height="32dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView8"
+            app:layout_constraintStart_toEndOf="@+id/imageView8"
+            app:srcCompat="@drawable/asterisque" />
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="35dp"
+            android:layout_height="32dp"
+            android:layout_marginBottom="-19dp"
+            android:onClick="afficherHeureLivraison"
+            app:layout_constraintBottom_toTopOf="@+id/heureSouhaitee"
+            app:layout_constraintStart_toEndOf="@+id/heureSouhaitee"
+            app:srcCompat="@drawable/chrono"
+            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="30dp"
+            android:layout_height="28dp"
+            android:layout_marginTop="-20dp"
+            app:layout_constraintStart_toEndOf="@+id/codePostal"
+            app:layout_constraintTop_toTopOf="@+id/codePostal"
+            app:srcCompat="@drawable/asterisque" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="28dp"
+            android:layout_height="26dp"
+            android:layout_marginTop="-20dp"
+            app:layout_constraintEnd_toEndOf="@+id/imageView"
+            app:layout_constraintStart_toEndOf="@+id/CI"
+            app:layout_constraintTop_toTopOf="@+id/CI"
+            app:srcCompat="@drawable/asterisque" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup3"
+            android:layout_width="147dp"
+            android:layout_height="56dp"
+            android:onClick="hideSoftKeyboard"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="@+id/dechets"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/radioGroup2"
+            app:layout_constraintTop_toBottomOf="@+id/materielLourd"
+            app:layout_constraintTop_toTopOf="@+id/dechets">
+
+
+            <RadioButton
+                android:id="@+id/BooleanDechet"
+                android:layout_width="73dp"
+                android:layout_height="match_parent"
+                android:text="@string/BooleanTechnicien"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/dechets"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <RadioButton
+                android:id="@+id/BooleanDechet2"
+                android:layout_width="73dp"
+                android:layout_height="match_parent"
+                android:text="@string/BooleanTechnicien2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.655"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/dechets"
+                tools:ignore="TouchTargetSizeCheck" />
+
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/radioGroup2"
+            android:layout_width="147dp"
+            android:layout_height="56dp"
+            android:onClick="hideSoftKeyboard"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="@+id/technicienSurPlace"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/technicienSurPlace"
+            app:layout_constraintTop_toBottomOf="@+id/infoComplementaire"
+            app:layout_constraintTop_toTopOf="@id/technicienSurPlace">
+
+
+            <RadioButton
+                android:id="@+id/BooleanTechnicien"
+                android:layout_width="73dp"
+                android:layout_height="match_parent"
+                android:text="@string/BooleanTechnicien"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/technicienSurPlace"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <RadioButton
+                android:id="@+id/BooleanTechnicien2"
+                android:layout_width="73dp"
+                android:layout_height="match_parent"
+                android:text="@string/BooleanTechnicien2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/technicienSurPlace"
+                tools:ignore="TouchTargetSizeCheck" />
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/infoComplementaire"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@color/grey"
+            android:inputType="text"
+            android:text="@string/infoComplementaire"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fournisseur" />
+
+        <TextView
+            android:id="@+id/heureProposee"
+            android:layout_width="150dp"
+            android:layout_height="52dp"
+            android:ems="10"
+            android:gravity="center"
+            android:text="@string/heure_proposee"
+            app:layout_constraintEnd_toStartOf="@+id/heureProposeeText"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/heureSouhaitee"
+            app:layout_constraintTop_toBottomOf="@+id/jourProposee" />
+
+        <TextView
+            android:id="@+id/heureProposeeText"
+            android:layout_width="100dp"
+            android:layout_height="52dp"
+            android:background="#cacaca"
+            android:contextClickable="false"
+            android:foregroundGravity="center"
+            android:gravity="center"
+            android:text="@string/jourProposeeText"
+            android:textColor="#6D4C41"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.9"
+            app:layout_constraintStart_toEndOf="@+id/heureSouhaitee"
+            app:layout_constraintTop_toBottomOf="@+id/jourProposeeText" />
+
+        <TextView
+            android:id="@+id/heureSouhaitee"
+            android:layout_width="220dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="5dp"
+            android:ems="10"
+            android:text="@string/heure_souhaitee"
+            app:layout_constraintEnd_toEndOf="@+id/dateSouhaitee"
+            app:layout_constraintStart_toStartOf="@+id/dateSouhaitee"
+            app:layout_constraintTop_toBottomOf="@+id/dateSouhaitee" />
+
+        <TextView
+            android:id="@+id/jourProposeeText"
+            android:layout_width="100dp"
+            android:layout_height="52dp"
+            android:background="#cacaca"
+            android:contextClickable="false"
+            android:foregroundGravity="center"
+            android:gravity="center"
+            android:text="@string/jourProposeeText"
+            android:textColor="#6D4C41"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.9"
+            app:layout_constraintStart_toEndOf="@+id/dateSouhaitee"
+            app:layout_constraintTop_toTopOf="@+id/jourProposee" />
+
+        <TextView
+            android:id="@+id/textHeureDemande"
+            android:layout_width="100dp"
+            android:layout_height="48dp"
+            android:background="#cacaca"
+            android:foregroundGravity="center"
+            android:gravity="center"
+            android:text="@string/textview"
+            android:textColor="#6D4C41"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.9"
+            app:layout_constraintStart_toEndOf="@+id/CI"
+            app:layout_constraintTop_toBottomOf="@+id/textDateDemande"
+            tools:ignore="DuplicateSpeakableTextCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/textDateDemande"
+            android:layout_width="100dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="20dp"
+            android:background="#cacaca"
+            android:foregroundGravity="center"
+            android:gravity="center"
+            android:text="@string/textview"
+            android:textColor="#6D4C41"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/datedemande"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck"
+            tools:inputType="date" />
+
+        <TextView
+            android:id="@+id/heuredemande"
+            android:layout_width="150dp"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:text="@string/heure_de_la_demande"
+            app:layout_constraintBottom_toBottomOf="@+id/textHeureDemande"
+            app:layout_constraintEnd_toStartOf="@+id/textHeureDemande"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/CI"
+            app:layout_constraintTop_toBottomOf="@+id/datedemande" />
+
+
+        <TextView
+            android:id="@+id/Localisation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@color/grey"
+            android:text="@string/localisation"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textService" />
+
+
+        <EditText
+            android:id="@+id/Adresse"
+            android:layout_width="wrap_content"
+            android:layout_height="52dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:ems="20"
+            android:hint="@string/adresse"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Localisation"
+            tools:ignore="SpeakableTextPresentCheck,TextContrastCheck,TextContrastCheck" />
+
+        <EditText
+            android:id="@+id/codePostal"
+            android:layout_width="140dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:hint="@string/code_postal"
+            android:inputType="number"
+            android:onClick="findZone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/Adresse"
+            app:layout_constraintTop_toBottomOf="@+id/Adresse"
+            tools:ignore="TextContrastCheck,TextContrastCheck" />
+
+
+        <TextView
+            android:id="@+id/creneauDispo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@color/grey"
+            android:text="@string/creneau_dispo"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/codePostal" />
+
+
+        <TextView
+            android:id="@+id/service"
+            android:layout_width="75dp"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:text="@string/service"
+            app:layout_constraintBottom_toBottomOf="@+id/textService"
+            app:layout_constraintEnd_toStartOf="@+id/textService"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/CI"
+            app:layout_constraintTop_toBottomOf="@+id/heuredemande" />
+
+
+        <EditText
+            android:id="@+id/demandeur"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:hint="@string/demandeur"
+            android:inputType="text"
+            android:minHeight="48dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/CI"
+            android:layout_width="210dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:hint="@string/ci"
+            android:inputType="text"
+            android:onClick="findService"
+            app:layout_constraintBottom_toTopOf="@+id/radioGroup"
+            app:layout_constraintEnd_toEndOf="@+id/demandeur"
+            app:layout_constraintStart_toStartOf="@+id/demandeur"
+            app:layout_constraintTop_toBottomOf="@+id/demandeur"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/zone"
+            android:layout_width="120dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:gravity="center"
+            android:minHeight="48dp"
+            android:text="@string/zone"
+            app:layout_constraintEnd_toStartOf="@+id/textZone"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/codePostal"
+            app:layout_constraintTop_toBottomOf="@+id/Adresse"
+            tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/roundcorner"
+            android:onClick="verifDateBienComprise"
+            android:text="@string/submit"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.49"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ValidationCommande"
+            app:layout_constraintVertical_bias="0.0" />
+
+
+        <TextView
+            android:id="@+id/textService"
+            android:layout_width="100dp"
+            android:layout_height="48dp"
+            android:background="#cacaca"
+            android:contextClickable="false"
+            android:foregroundGravity="center"
+            android:gravity="center"
+            android:text="@string/textview"
+            android:textColor="#6D4C41"
+            app:layout_constraintEnd_toEndOf="@+id/textHeureDemande"
+            app:layout_constraintStart_toStartOf="@+id/textHeureDemande"
+            app:layout_constraintTop_toBottomOf="@+id/textHeureDemande" />
+
+        <TextView
+            android:id="@+id/textZone"
+            android:layout_width="84dp"
+            android:layout_height="48dp"
+            android:background="#cacaca"
+            android:gravity="center"
+            android:text="@string/textview"
+            android:textColor="#6D4C41"
+            app:layout_constraintBottom_toBottomOf="@+id/zone"
+            app:layout_constraintEnd_toEndOf="@+id/Adresse" />
+
+        <TextView
+            android:id="@+id/possibleLivraison"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="20dp"
+            android:gravity="center"
+            android:text="@string/textview"
+            android:textColor="@android:color/holo_red_dark"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/Adresse"
+            app:layout_constraintTop_toTopOf="@+id/Adresse" />
+
+        <TextView
+            android:id="@+id/datedemande"
+            android:layout_width="138dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:gravity="center"
+            android:text="@string/date_de_la_demande"
+            app:layout_constraintBottom_toBottomOf="@+id/textDateDemande"
+            app:layout_constraintEnd_toStartOf="@+id/textService"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/demandeur"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/jourProposee"
+            android:layout_width="150dp"
+            android:layout_height="52dp"
+            android:ems="10"
+            android:gravity="center"
+            android:text="@string/jour_proposee"
+            app:layout_constraintEnd_toStartOf="@+id/jourProposeeText"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/dateSouhaitee"
+            app:layout_constraintTop_toTopOf="@+id/dateSouhaitee" />
+
+        <TextView
+            android:id="@+id/textJourArrivee"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:textColor="@android:color/holo_red_dark"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/heureSouhaitee" />
+
+        <TextView
+            android:id="@+id/dateSouhaitee"
+            android:layout_width="220dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="300dp"
+
+            android:layout_marginBottom="5dp"
+            android:ems="10"
+            android:text="@string/date_souhaitee"
+            app:layout_constraintBottom_toTopOf="@+id/heureSouhaitee"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/creneauDispo"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="508dp"
+            android:layout_height="43dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/demandeConcerne">
+
+
+            <RadioButton
+                android:id="@+id/commandeFournisseur"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:onClick="radioButtonFournisseur"
+                android:text="@string/commande_fournisseur"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <RadioButton
+                android:id="@+id/commandeDepot"
+                android:layout_width="155dp"
+                android:layout_height="match_parent"
+                android:onClick="radioButtonDepot"
+                android:text="@string/commande_d_pot"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.655"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <RadioButton
+                android:id="@+id/commandeStock"
+                android:layout_width="171dp"
+                android:layout_height="match_parent"
+                android:onClick="radioButtonStock"
+                android:text="@string/demande_de_service"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.949"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="TouchTargetSizeCheck" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/demandeConcerne"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@color/grey"
+            android:text="@string/demande_concerne"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textJourArrivee" />
+
+        <EditText
+            android:id="@+id/numeroOxalys"
+            android:layout_width="200dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="36dp"
+            android:ems="10"
+            android:hint="@string/numeroOxalys"
+            android:inputType="number"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toStartOf="@+id/nombreColis"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+        <EditText
+            android:id="@+id/fournisseur"
+            android:layout_width="200dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:hint="@string/fournisseur"
+            android:inputType="textPersonName"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="@+id/numeroOxalys"
+            app:layout_constraintStart_toStartOf="@+id/numeroOxalys"
+            app:layout_constraintTop_toBottomOf="@+id/nombreColis" />
+
+        <EditText
+            android:id="@+id/lieuEnlevement"
+            android:layout_width="200dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:hint="@string/lieuEnlevement"
+            android:inputType="textPersonName"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="@+id/nombreColis"
+            app:layout_constraintStart_toStartOf="@+id/nombreColis"
+            app:layout_constraintTop_toBottomOf="@+id/nombreColis" />
+
+        <EditText
+            android:id="@+id/nombreColis"
+            android:layout_width="200dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="20dp"
+            android:ems="10"
+            android:hint="@string/nombreColis"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/numeroOxalys"
+            app:layout_constraintTop_toTopOf="@+id/numeroOxalys" />
+
+        <TextView
+            android:id="@+id/technicienSurPlace"
+            android:layout_width="430dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="8dp"
+            android:ems="10"
+            android:gravity="center_vertical"
+            android:hint="@string/technicienSurPlace"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/materielLourd"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/infoComplementaire" />
+
+        <EditText
+            android:id="@+id/materielLourd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:ems="10"
+            android:hint="@string/materielLourd"
+            android:inputType="number"
+            app:layout_constraintBottom_toTopOf="@+id/dechets"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/technicienSurPlace" />
+
+        <EditText
+            android:id="@+id/commentaires"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="20dp"
+            android:ems="10"
+            android:hint="@string/commentaires"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            app:layout_constraintBottom_toTopOf="@+id/ValidationCommande"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/dechets"
+            app:layout_constraintTop_toBottomOf="@+id/dechets" />
+
+        <TextView
+            android:id="@+id/dechets"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="344dp"
+            android:layout_marginBottom="8dp"
+            android:ems="10"
+            android:gravity="center_vertical"
+            android:hint="@string/dechets"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/commentaires"
+            app:layout_constraintEnd_toStartOf="@+id/radioGroup3"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/materielLourd"
+            app:layout_constraintTop_toBottomOf="@+id/materielLourd" />
+
+        <TextView
+            android:id="@+id/ValidationCommande"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="@string/textview"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="20sp"
+            android:textStyle="bold|italic"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/commentaires" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="28dp"
+            android:layout_height="26dp"
+            android:layout_marginTop="-20dp"
+            app:layout_constraintStart_toEndOf="@+id/demandeur"
+            app:layout_constraintTop_toTopOf="@+id/demandeur"
+            app:srcCompat="@drawable/asterisque" />
+
+        <EditText
+            android:id="@+id/numeroOxalys2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="@string/numeroOxalys"
+            android:inputType="textPersonName"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="@+id/radioGroup"
+            app:layout_constraintStart_toStartOf="@+id/radioGroup"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+        <EditText
+            android:id="@+id/consignes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="@string/consignes"
+            android:inputType="textPersonName"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/numeroOxalys2" />
+
+        <EditText
+            android:id="@+id/commStock"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:ems="10"
+            android:hint="@string/champslibreMateriel"
+            android:inputType="textPersonName"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/infoComplementaire"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

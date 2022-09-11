@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Livraison Chantier</string>
+    <string name="title">Livraison</string>
+    <string name="heure_de_la_demande">Heure de la demande :</string>
+    <string name="ci">CI :</string>
+    <string name="textview"></string>
+    <string name="code_postal">Code Postal :</string>
+    <string name="localisation">Localisation</string>
+    <string name="submit">ENVOYER</string>
+    <string name="creneau_dispo">Créneau horaire</string>
+    <string name="demandeur">Demandeur :</string>
+    <string name="adresse">Adresse:</string>
+    <string name="commande_d_pot">Enlèvement dépot</string>
+    <string name="zone">Zone :</string>
+    <string name="num_ro_praxedo">Numéro Praxedo :</string>
+    <string name="type_de_commande">Type de Commande</string>
+    <string name="commande_fournisseur">Enlèvement Fournisseur</string>
+    <string name="demande_de_service">Commande Stock</string>
+    <string name="date_de_la_demande">Date de la demande :</string>
+    <string name="service">Service :</string>
+    <string name="date_souhaitee">Date de la livraison souhaitée :  </string>
+    <string name="heure_souhaitee">Heure de la livraison souhaitée :  </string>
+    <string name="jour_proposee">Jour de livraison Proposée :</string>
+    <string name="heure_proposee">Heure de livraison Proposée :</string>
+    <string name="jourProposeeText"></string>
+    <string name="heureProposeeText"></string>
+    <string name="demande_concerne">La Demande Concerne</string>
+    <string name="numeroOxalys">N° de commande :</string>
+    <string name="nombreColis">Nombre de Colis :</string>
+    <string name="consignes">Consignes liées au dépot:</string>
+    <string name="fournisseur">Fournisseur :</string>
+    <string name="lieuEnlevement">Lieu Enlèvement :</string>
+    <string name="technicienSurPlace">Le technicien sera-t-il sur place lors de la livraison :</string>
+    <string name="materielLourd">Si le matériel à livrer est lourd,\n combien de personne seront sur place pour aider la manutention :</string>
+    <string name="dechets">Des déchets seront-ils à reprendre :</string>
+    <string name="commentaires">Commentaires \n(interphone, n° d\'étages, stationnement, contraintes particulières) :</string>
+    <string name="infoComplementaire">Compléments d\'informations</string>
+    <string name="BooleanTechnicien">Oui</string>
+    <string name="BooleanTechnicien2">Non</string>
+    <string name="champslibreMateriel">Matériel Souhaité (nom(s) de l\'article(s), quantité(s) de l\'article(s))</string>
+
+
+</resources>
